@@ -1,3 +1,4 @@
+
 (function () {
   "use strict";
 
@@ -154,5 +155,5 @@
     return { canListen, canSpeak, listen, speak, stopListening, stopSpeaking, reset };
   }
 
-  window.KTBVoice = { create };
+  window.CardRescueVoice = { create };
 })();
