@@ -67,7 +67,7 @@
 
   const intents = [
     ["handoff", /เจ้าหน้าที่|พนักงาน|คุยกับคน|โอเปอเรเตอร์|\b(?:agent|representative|operator|human|customer service|customer support|support staff)\b/i],
-    ["card", /บัตร.{0,24}(?:หาย|หามิได้|ถูกขโมย|อายัด|ระงับ|ล็อก|ล็อค|ปิดใช้งาน)|(?:อายัด|ระงับ|ล็อก|ล็อค).{0,16}บัตร|\b(?:lost|stolen|missing|block|freeze|lock|disable|cancel)(?:ed)?\b.*\bcard\b|\bcard\b.*\b(?:lost|stolen|missing|block|blocked|freeze|frozen|lock|locked|disable|disabled)\b/i],
+    ["card", /หาบัตร.{0,12}ไม่เจอ|\bcan(?:not|['’]t) find\b.*\bcard\b|\bmisplaced\b.*\bcard\b|บัตร.{0,24}(?:หาย|หามิได้|ถูกขโมย|อายัด|ระงับ|ล็อก|ล็อค|ปิดใช้งาน)|(?:อายัด|ระงับ|ล็อก|ล็อค).{0,16}บัตร|\b(?:lost|stolen|missing|block|freeze|lock|disable|cancel)(?:ed)?\b.*\bcard\b|\bcard\b.*\b(?:lost|stolen|missing|block|blocked|freeze|frozen|lock|locked|disable|disabled)\b/i],
     ["transfer", /สถานะ.{0,16}(?:โอน|รายการ)|(?:ติดตาม|ตรวจสอบ|เช็ค|เช็ก).{0,18}(?:โอน|รายการ)|โอน.{0,12}(?:สำเร็จ|หรือยัง|เข้าหรือยัง)|\b(?:status|track|check|did)\b.*\btransfer\b|\btransfer\b.*\b(?:status|complete|completed|go through|arrive)\b/i],
     ["balance", /ยอด(?:เงิน|คงเหลือ|บัญชี)|เงินเหลือ|\b(?:balance|available funds)\b/i]
   ];
