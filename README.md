@@ -1,6 +1,6 @@
 # Card Rescue VoiceBot
 
-**[Open the live Card Rescue VoiceBot website →](https://molarli.github.io/krungthai-card-voicebot/)**
+**[Open the live Card Rescue VoiceBot website →](https://molarli.github.io/card-rescue-voicebot/)**
 
 An independent Thai/English browser simulation of urgent lost-card support. This is a bank-neutral student pitch prototype: it makes no calls, connects to no bank, blocks no real cards, and connects to no live agent.
 
@@ -54,6 +54,6 @@ The 37 regression checks cover both languages, two-card selection, identity and 
 
 ## Publishing
 
-This repository publishes static HTML/CSS/JavaScript from the **root of `main`** using GitHub Pages. No build step is required. Keep Pages set to the root. The repository name is retained for URL continuity; all website branding is Card Rescue VoiceBot.
+This repository publishes static HTML/CSS/JavaScript from the **root of `main`** using GitHub Pages. No build step is required. Keep Pages set to the root. The repository and website use the Card Rescue VoiceBot brand.
 
-Site address: `https://molarli.github.io/krungthai-card-voicebot/`. A successful source push alone does not prove deployment success; verify the Pages deployment after publishing.
+Site address: `https://molarli.github.io/card-rescue-voicebot/`. A successful source push alone does not prove deployment success; verify the Pages deployment after publishing.
