@@ -48,7 +48,7 @@ node --check voice.js
 node tests/dialogue.test.cjs
 ```
 
-The 35 regression checks cover both languages, two-card selection, identity and block confirmation gates, selected-card-only blocking, replacement/delivery, failed verification, cancellation, uncertainty, repeated fallback, agent handoff, reset, and synthetic secret redaction. Browser QA covers desktop and a 390px mobile layout, typed English success flow, Thai verification failure, reset, and dead fragment links. Actual microphone recognition and live bank operations are not tested.
+The 37 regression checks cover both languages, two-card selection, identity and block confirmation gates, selected-card-only blocking, replacement/delivery, failed verification, cancellation, uncertainty, repeated fallback, agent handoff, reset, and synthetic secret redaction. Browser QA covers desktop and a 390px mobile layout, typed English success flow, Thai verification failure, reset, and dead fragment links. Actual microphone recognition and live bank operations are not tested.
 
 ## Publishing
 
