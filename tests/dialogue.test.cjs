@@ -14,6 +14,7 @@ for(const lang of ['en','th']){
  const yes=lang==='en'?'yes':'ยืนยัน';
  const start=(id='sage')=>{const d=api.create();assert.equal(d.reply(lost,lang).step,'select');d.reply(id,lang,{action:`select-${id}`});return d;};
  const review=(id)=>{const d=start(id);assert.equal(d.reply('approve demo identity',lang,{action:'confirm-verify'}).step,'block');return d;};
+ test(lang+' natural lost-card wording',()=>{const d=api.create();const r=d.reply(lang==='en'?"I can’t find my debit card.":'หาบัตรไม่เจอค่ะ',lang);assert.equal(r.step,'select');assert.ok(d.getState().cards.every(c=>!c.blocked));});
  test(lang+' two distinct fictional cards',()=>{const d=api.create();const r=d.reply(lost,lang);assert.equal(r.quickReplies.filter(x=>x.action?.startsWith('select-')).length,2);assert.equal(d.getState().cards.length,2);});
  test(lang+' typed card-name selection',()=>{const d=api.create();d.reply(lost,lang);assert.equal(d.reply('Onyx',lang).step,'verify');assert.equal(d.getState().selected.id,'onyx');});
  test(lang+' spoken/typed approval cannot verify identity',()=>{const d=start();assert.equal(d.reply(yes,lang).step,'verify');assert.ok(d.getState().cards.every(c=>!c.blocked));});
