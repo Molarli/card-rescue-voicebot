@@ -2,11 +2,11 @@
   const copy = {
     th: {
       prototype: 'เดโมจำลอง', language: 'ภาษาของเดโม',
-      title: ['แจ้งบัตรหาย', 'ด้วยเสียง'],
-      subtitle: 'ทดลองแจ้งบัตรเดบิตหายผ่านผู้ช่วยเสียง ตั้งแต่การอายัดบัตรไปจนถึงการขอออกบัตรใหม่ในระบบจำลอง',
+      title: ['บัตรหาย?', 'มีทางไปต่อที่ชัดเจน'],
+      subtitle: 'ระบบจำลองอิสระบนเบราว์เซอร์สำหรับแจ้งบัตรหาย พูดหรือพิมพ์ เลือกบัตรสมมติ และตรวจสอบก่อนตัดสินใจทุกขั้นตอน',
       tryDemo: 'เริ่มทดลอง', scenarioKicker: 'สถานการณ์จำลอง', scenarios: 'เลือกเรื่องที่จะคุย',
       journeyKicker: 'ติดตามสถานะ', journeyTitle: 'ขั้นตอนอายัดบัตร',
-      safeTitle: 'ข้อมูลสมมติสำหรับเดโม', safeBody: 'กรุณาอย่าป้อนรหัส PIN, OTP หรือข้อมูลบัญชีจริง',
+      safeTitle: 'ข้อมูลสมมติสำหรับเดโม', safeBody: 'ไม่ใช้ PIN, OTP, เลขบัตรประชาชน, เลขบัตรเต็ม หรือรหัสธนาคารจริง',
       voiceNote: 'การแปลงเสียงอาจใช้บริการของเบราว์เซอร์',
       footer: 'เดโมอิสระ · การทำรายการทั้งหมดเป็นการจำลอง',
       audio: 'เสียงตอบกลับอัตโนมัติ', reset: 'เริ่มบทสนทนาใหม่',
@@ -21,19 +21,19 @@
       speechError: 'เล่นเสียงตอบกลับไม่ได้ คุณยังอ่านข้อความได้',
       reviewTitle: 'ตรวจสอบก่อนอายัดบัตร',
       reviewImpact: 'หลังยืนยัน บัตรตัวอย่างใบนี้จะใช้ชำระเงินหรือถอนเงินไม่ได้ในระบบจำลอง คุณเลือกขอบัตรใหม่ได้ในขั้นตอนถัดไป',
-      verify: 'ยืนยันตัวตนจำลอง', block: 'อายัดบัตรเดบิต', replacement: 'ขอบัตรใหม่', delivery: 'ยืนยันการจัดส่ง',
+      select: 'เลือกบัตรสมมติ', verify: 'ยืนยันตัวตนจำลอง', block: 'อายัดบัตรเดบิต', replacement: 'ขอบัตรใหม่', delivery: 'ยืนยันการจัดส่ง',
       replacement_ordered: 'ผลจำลอง · อายัดบัตรและสั่งบัตรใหม่แล้ว',
       card_blocked: 'ผลจำลอง · อายัดบัตรแล้ว',
-      canceled: 'ผลจำลอง · ยกเลิกขั้นตอนแล้ว',
+      canceled: 'ผลจำลอง · ยกเลิกขั้นตอนแล้ว', agent_handoff: 'ส่งต่อจำลอง · CR-DEMO-0002 · ไม่อายัดเพิ่ม ไม่มีเจ้าหน้าที่จริง',
       verification_failed: 'ผลจำลอง · ส่งต่อเจ้าหน้าที่โดยยังไม่ได้อายัดบัตร'
     },
     en: {
       prototype: 'Simulation', language: 'Demo language',
-      title: ['Lost your card?', 'Just say it.'],
-      subtitle: 'Try reporting a lost debit card, blocking it, and requesting a replacement with a simulated voice assistant.',
+      title: ['Lost your card?', 'Find your next step.'],
+      subtitle: 'An independent browser simulation of urgent lost-card support. Speak or type, choose a fictional card, and stay in control of the next step.',
       tryDemo: 'Try the demo', scenarioKicker: 'DEMO SCENARIOS', scenarios: 'Choose a scenario',
       journeyKicker: 'JOURNEY TRACKER', journeyTitle: 'Card blocking steps',
-      safeTitle: 'Fictional demo data', safeBody: 'Keep real PINs, OTPs, and account details out of the demo.',
+      safeTitle: 'Fictional demo data', safeBody: 'No real PIN, OTP, national ID, full card number, or bank credentials.',
       voiceNote: 'Voice recognition may use your browser’s speech service.',
       footer: 'Independent demo · All banking actions are simulated',
       audio: 'Spoken replies', reset: 'Start a new conversation',
@@ -48,10 +48,10 @@
       speechError: 'Audio playback is unavailable. The reply is in the transcript.',
       reviewTitle: 'Review before blocking',
       reviewImpact: 'In this simulation, blocking stops purchases and cash withdrawals on this card. You can request a replacement in the next step.',
-      verify: 'Verify identity', block: 'Block debit card', replacement: 'Request replacement', delivery: 'Confirm delivery',
+      select: 'Select fictional card', verify: 'Simulate identity check', block: 'Block debit card', replacement: 'Request replacement', delivery: 'Confirm delivery',
       replacement_ordered: 'Simulated outcome · Card blocked and replacement ordered',
       card_blocked: 'Simulated outcome · Card blocked',
-      canceled: 'Simulated outcome · Request canceled',
+      canceled: 'Simulated outcome · Request canceled', agent_handoff: 'Demo handoff · CR-DEMO-0002 · No new block. No live agent.',
       verification_failed: 'Simulated outcome · Referred to an agent without blocking the card'
     }
   };
@@ -59,19 +59,19 @@
   const ui = Object.fromEntries([
     'scenario-list', 'journey-steps', 'outcome', 'voice-state', 'audio', 'reset',
     'transcript', 'quick-replies', 'notice', 'composer', 'mic', 'message',
-    'try-demo', 'conversation', 'card-review', 'review-title', 'review-card-label', 'review-actions'
+    'conversation', 'card-review', 'review-title', 'review-card-label', 'review-actions'
   ].map(id => [id, document.getElementById(id)]));
-  const steps = ['verify', 'block', 'replacement', 'delivery'];
-  const dialogue = window.KTBDialogue.create();
-  let lang = 'th';
+  const steps = ['select', 'verify', 'block', 'replacement', 'delivery'];
+  const dialogue = window.CardRescueDialogue.create();
+  let lang = 'en';
   let voiceState = 'idle';
-  let audioEnabled = true;
+  let audioEnabled = false;
   let activeScenario = null;
   let journeyStep = null;
   let outcome = null;
   let noticeKey = null;
 
-  const voice = window.KTBVoice.create({
+  const voice = window.CardRescueVoice.create({
     onTranscript: text => submit(text),
     onState: state => {
       voiceState = state;
@@ -124,7 +124,7 @@
   }
 
   function renderScenarios() {
-    ui['scenario-list'].replaceChildren(...window.KTBDialogue.scenarios.map(scenario => {
+    ui['scenario-list'].replaceChildren(...window.CardRescueDialogue.scenarios.map(scenario => {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'scenario';
@@ -150,8 +150,8 @@
 
   function renderJourney() {
     const stepIndex = steps.indexOf(journeyStep);
-    const completedSteps = outcome === 'replacement_ordered' ? 4 :
-      outcome === 'card_blocked' ? 2 : Math.max(stepIndex, 0);
+    const completedSteps = outcome === 'replacement_ordered' ? 5 :
+      outcome === 'card_blocked' ? 3 : Math.max(stepIndex, 0);
     ui['journey-steps'].replaceChildren(...steps.map((step, index) => {
       const item = document.createElement('li');
       if (index === stepIndex) item.setAttribute('aria-current', 'step');
@@ -164,12 +164,13 @@
       return item;
     }));
     ui.outcome.hidden = !outcome || !copy[lang][outcome];
-    ui.outcome.dataset.handoff = String(outcome === 'verification_failed');
+    ui.outcome.dataset.handoff = String(['verification_failed', 'agent_handoff'].includes(outcome));
     ui.outcome.textContent = copy[lang][outcome] ?? '';
   }
 
   function renderText() {
     document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en][data-th]').forEach(element => { element.innerHTML = element.dataset[lang]; });
     document.querySelectorAll('[data-copy]').forEach(element => {
       const value = copy[lang][element.dataset.copy];
       if (Array.isArray(value)) {
@@ -223,7 +224,7 @@
     const review = ui['card-review'];
     const reviewing = items.some(item => item.action === 'confirm-block');
     const destination = reviewing ? ui['review-actions'] : ui['quick-replies'];
-    const card = window.KTBDialogue.card;
+    const card = dialogue.getState().selected;
     review.hidden = !reviewing;
     ui['quick-replies'].hidden = reviewing || items.length === 0;
     ui['review-actions'].replaceChildren();
@@ -256,7 +257,7 @@
     showNotice(null);
     ui.message.value = '';
     const result = dialogue.reply(input, lang, { action });
-    const scenario = window.KTBDialogue.scenarios.find(item => item.id === result.intent);
+    const scenario = window.CardRescueDialogue.scenarios.find(item => item.id === result.intent);
     if (scenarioId || scenario) activeScenario = scenarioId ?? scenario.id;
     if (result.intent === 'card') {
       journeyStep = result.step;
@@ -271,6 +272,7 @@
     turn('assistant', result.text);
     quickReplies(result.quickReplies);
     renderJourney();
+    renderCards();
     ui['scenario-list'].querySelectorAll('button').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.scenario === activeScenario));
     });
@@ -288,7 +290,25 @@
     quickReplies([]);
     showNotice(null);
     renderText();
-    turn('assistant', window.KTBDialogue.welcome(lang));
+    renderCards();
+    turn('assistant', window.CardRescueDialogue.welcome(lang));
+    quickReplies(window.CardRescueDialogue.scenarios.map(s => ({label:s.title[lang],text:s.prompt[lang]})));
+  }
+
+  function renderCards() {
+    const state = dialogue.getState();
+    document.getElementById('demo-cards').replaceChildren(...state.cards.map(card => {
+      const item = document.createElement('div');
+      item.className = 'demo-card';
+      item.dataset.selected = String(state.selected?.id === card.id);
+      item.dataset.blocked = String(card.blocked);
+      const title = document.createElement('span');
+      title.textContent = card.label[lang] + ' •••• ' + card.lastFour;
+      const status = document.createElement('b');
+      status.textContent = card.blocked ? (lang === 'en' ? 'BLOCKED · DEMO' : 'อายัดแล้ว · จำลอง') : (lang === 'en' ? 'ACTIVE · DEMO' : 'ใช้งานได้ · จำลอง');
+      item.append(title,status);
+      return item;
+    }));
   }
 
   ui.composer.addEventListener('submit', event => {
@@ -308,12 +328,6 @@
   ui.reset.addEventListener('click', () => {
     reset();
     ui.message.focus({preventScroll: true});
-  });
-  ui['try-demo'].addEventListener('click', () => {
-    reset();
-    ui['scenario-list'].querySelector('[data-scenario=card]').click();
-    ui['conversation'].scrollIntoView({block: 'start'});
-    ui['quick-replies'].querySelector('button')?.focus({preventScroll: true});
   });
   document.querySelectorAll('[data-lang]').forEach(button => {
     button.addEventListener('click', () => {
