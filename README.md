@@ -1,5 +1,7 @@
 # Card Rescue VoiceBot
 
+**[Open the live Card Rescue VoiceBot website →](https://molarli.github.io/krungthai-card-voicebot/)**
+
 An independent Thai/English browser simulation of urgent lost-card support. This is a bank-neutral student pitch prototype: it makes no calls, connects to no bank, blocks no real cards, and connects to no live agent.
 
 The landing page uses original code-drawn product illustrations, a near-black/mint opening, five guided product-story sections, an embedded working demo, and a clearly labeled bank-partner concept.
